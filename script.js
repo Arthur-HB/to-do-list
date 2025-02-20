@@ -24,7 +24,7 @@ button.onclick = ev => {
 
         libutton.onclick = () =>{
             // ul.removeChild(liitem)
-            liitem.setAttribute('style', "text-decoration: line-through;")
+            liitem.setAttribute('style', "text-decoration: line-through red;")
         }
 
         deletar.onclick = () =>{
