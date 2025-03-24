@@ -1,8 +1,8 @@
 @charset "UTF-8";
 :root{
-    --cor0: #bfd6a8;
-    --cor1: #8FDB42;
-    --cor2: #42DB6C;
+    --cor0: #d9dffa;
+    --cor1: #404080;
+    --cor2: #262661;
     --cor3: #eeeeee;
 }
 *{
@@ -72,7 +72,6 @@ form button{
 }
 button:hover{
     background-color: var(--cor0);
-    border: 1px solid rgba(0, 0, 0, 0.445);
 }
 div h1{
     margin-bottom: 2vh;
@@ -90,9 +89,15 @@ a{
     text-decoration: none;
     color: black;
     font-size: 1.2em;
+    transition: 250ms;
+}
+a:hover{
+    color: var(--cor3);
 }
 .tarefa{
     padding: 10px;
+    font-style: italic;
+    font-size: 1.2em;
 }
 .libutton{
     
@@ -105,6 +110,32 @@ a{
     padding: 10px;
 }
 .deletar:hover{
-    color: rgb(218, 94, 94);
+    color: rgb(216, 115, 115);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.418);
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.strikethrough {
+    position: relative;
+    display: inline-block;
+}
+
+.strikethrough::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: red;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-out;
+}
+
+.strikethrough-active::after {
+    transform: scaleX(1);
 }

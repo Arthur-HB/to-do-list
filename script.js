@@ -22,17 +22,21 @@ button.onclick = ev => {
         liitem.appendChild(libutton)
         liitem.appendChild(deletar)
 
-        libutton.onclick = () =>{
-            // ul.removeChild(liitem)
-            liitem.setAttribute('style', "text-decoration: line-through red;")
+        libutton.onclick = () => {
+            span.classList.add('strikethrough');
+            setTimeout(() => {
+                span.classList.add('strikethrough-active');
+            }, 10);
         }
 
-        deletar.onclick = () =>{
-            ul.removeChild(liitem)
+        deletar.onclick = () => {
+            liitem.classList.add('fade-out');
+            setTimeout(() => {
+                ul.removeChild(liitem);
+            }, 500);
         }
 
         ul.appendChild(liitem );
         input.value = "";
     }
 }
-
